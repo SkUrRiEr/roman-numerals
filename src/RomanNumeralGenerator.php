@@ -38,7 +38,21 @@ class RomanNumeralGenerator {
    *   Roman numeral representing the passed integer.
    */
   public function generate(int $number, bool $lowerCase = FALSE) : string {
-    return "Not implemented";
+    $remaining = $number;
+    $output = "";
+
+    while ($remaining > 0) {
+      foreach (self::$values as $value => $numeral) {
+        if ($value <= $remaining) {
+          $remaining -= $value;
+          $output .= $numeral;
+
+          break;
+        }
+      }
+    }
+
+    return $output;
   }
 
 }
