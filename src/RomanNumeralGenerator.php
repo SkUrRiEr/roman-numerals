@@ -52,6 +52,10 @@ class RomanNumeralGenerator {
       }
     }
 
+    if ($lowerCase) {
+      return strtolower($output);
+    }
+
     return $output;
   }
 
